@@ -7,21 +7,19 @@ using System.Collections;
 
 public class ClourView : View{
 
+    public Transform L_displayCell_father;
 	public GameObject L_displayCell;
+    public const string ResourceImagePath = "Image/Fish/";
+
     public GameObject R_displayModel;
-
     private List<cellDatas> Datas_L_displayCell;
-
-
-    public Text _text;
-
 
     void Awake()
     {   
         GetNetworkDatas("");
     }
 
-    public void GetNetworkDatas(string name){
+    private void GetNetworkDatas(string name){
 		StartCoroutine(NetWorkGetDatas(name));
 	}
 
@@ -44,14 +42,14 @@ public class ClourView : View{
     private  void AnalyticData(string info)
     {
         Datas_L_displayCell = FileManager.AnalyticData<List<cellDatas>>(info);
-        _text.text = Datas_L_displayCell[0].id.ToString();
+        for(int i = 0;i < Datas_L_displayCell.Count;i++){
+            var cell = Instantiate(L_displayCell,L_displayCell_father);
+            var cell_Component = cell.GetComponent<L_cell_display>();
+            if(cell_Component != null){
+                cell_Component.display(Datas_L_displayCell[i],ResourceImagePath);
+            }
+        }
     }
-
-
-
-
-
-
 
 
 }
