@@ -40,8 +40,20 @@ public static class FileManager{
         }
         return loadData;
     }
+/// <summary>
+/// 返回解析的数据
+/// </summary>
+/// <param name="datas"></param>
+/// <returns></returns>
+    public static T AnalyticData<T>(string datas) where T : new(){ 
+        T loadData = JsonMapper.ToObject<T>(datas);
+        if(loadData == null){
+            return new T();
+        }else{
+            return loadData;
+        }
 
-    
+    }
 
 
 }  

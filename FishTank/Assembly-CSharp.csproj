@@ -51,7 +51,6 @@
      <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
      <Compile Include="Assets\Script\Manager\FileManager.cs" />
      <Compile Include="Assets\Script\Manager\GameSceneManager.cs" />
-     <Compile Include="Assets\Script\Manager\NetworkDatasManager.cs" />
      <Compile Include="Assets\Script\Manager\SettingManager.cs" />
      <Compile Include="Assets\Script\base\GameCommand.cs" />
      <Compile Include="Assets\Script\base\GameContext.cs" />
