@@ -16,7 +16,7 @@ public class ClourView : View{
     public Slider slider_horizontal;
 	public Slider slider_vertical;
 
-    private float OldSliderNub = 0;
+    public float oldAngleNumber = 0;
 
     void Awake()
     {   
@@ -42,20 +42,27 @@ public class ClourView : View{
         GameObject  currentModel = GetModel();
         if(currentModel != null){
             var suitAngle = new Vector3(0,currentNumber,0) - 
-             currentModel.transform.rotation.eulerAngles;
+            currentModel.transform.rotation.eulerAngles;
             currentModel.transform.Rotate(suitAngle);
-            OldSliderNub = currentNumber;
+           
        }
 	}
+
 
 	private void vertical(float currentNumber){
         // Debug.Log("vertical :  " + currentNumber);
         GameObject  currentModel = GetModel();
-       if(currentModel != null){
-        //    currentModel.transform.Rotate(0,0,currentNumber * 360);
+        if(currentModel != null){
+            var angle = currentNumber - oldAngleNumber;
+            currentModel.transform.Rotate(new Vector3(angle,0,0));
+            oldAngleNumber = currentNumber;
        }
 	}
 
+    /// <summary>
+    /// 得到展示模型
+    /// </summary>
+    /// <returns></returns>
     private GameObject GetModel(){
         if(Display3DFish.transform.GetChildCount() > 0){
              var Display3DFishChildlen = Display3DFish.transform.GetChild(0);

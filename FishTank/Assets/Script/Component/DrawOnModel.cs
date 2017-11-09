@@ -6,7 +6,7 @@ public class DrawOnModel : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
     public Color color = Color.red;
 
-    public float thickness = 0.02f;
+    public float thickness = 0.06f;
 
     private List<Vector3> points = new List<Vector3>();
     private List<Vector3> normals = new List<Vector3>();
