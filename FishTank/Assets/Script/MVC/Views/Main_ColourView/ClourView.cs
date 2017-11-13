@@ -15,6 +15,7 @@ public class ClourView : View{
     private List<cellDatas> Datas_L_displayCell;
     public Slider slider_horizontal;
 	public Slider slider_vertical;
+    public GameObject BrushContainer;
 
     public float oldAngleNumber = 0;
 
@@ -44,7 +45,6 @@ public class ClourView : View{
             var suitAngle = new Vector3(0,currentNumber,0) - 
             currentModel.transform.rotation.eulerAngles;
             currentModel.transform.Rotate(suitAngle);
-           
        }
 	}
 
@@ -64,8 +64,9 @@ public class ClourView : View{
     /// </summary>
     /// <returns></returns>
     private GameObject GetModel(){
-        if(Display3DFish.transform.GetChildCount() > 0){
-             var Display3DFishChildlen = Display3DFish.transform.GetChild(0);
+        var Display3DFishChildlens = GameObject.FindGameObjectsWithTag("Model");
+        if (Display3DFishChildlens.Length > 0){
+             var Display3DFishChildlen = Display3DFishChildlens[0];
              return Display3DFishChildlen.gameObject;
         }
         return null;
@@ -112,12 +113,17 @@ public class ClourView : View{
     }
 
     private void ListenerCell(int id){
-        for (var i = 0 ; i < Display3DFish.transform.GetChildCount();i++){
-            Destroy(Display3DFish.transform.GetChild(i).gameObject);
+        var Display3DFishChildlens = GameObject.FindGameObjectsWithTag("Model");
+        for (var i = 0 ; i < Display3DFishChildlens.Length; i++){
+            Destroy(Display3DFishChildlens[i].gameObject);
+        }
+        for (var i = 0; i<BrushContainer.transform.GetChildCount(); i++)
+        {
+            Destroy(BrushContainer.transform.GetChild(i).gameObject);
         }
         var model = Resources.Load(ResourceModelPath + "Cube"+id,typeof(GameObject));
         var displayModel = (GameObject)Instantiate(model,Display3DFish.transform);
-        displayModel.AddComponent<DrawOnModel>();
+        
     }
     
 }
