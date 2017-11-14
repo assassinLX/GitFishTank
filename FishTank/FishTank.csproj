@@ -220,6 +220,9 @@
     <Reference Include="LitJson">
       <HintPath>Assets\LitJson.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>Assets\Plugin\protobuf-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ColorSelector\ColorSelector.cs" />
@@ -235,8 +238,12 @@
     <Compile Include="Assets\Script\Manager\GameSceneManager.cs" />
     <Compile Include="Assets\Script\Manager\SettingManager.cs" />
     <Compile Include="Assets\Script\MVC\Datas\Main_Left_cellData\cellDatas.cs" />
+    <Compile Include="Assets\Script\MVC\Datas\Main_Right_ModelData\ModelData.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourMediator.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
+    <Compile Include="Assets\Script\netWork\ClientDemo.cs" />
+    <Compile Include="Assets\Script\netWork\NetModel.cs" />
+    <Compile Include="Assets\Script\netWork\NetUtility.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\ICommand.cs" />

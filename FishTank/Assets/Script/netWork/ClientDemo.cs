@@ -11,19 +11,25 @@ public class ClientDemo : MonoBehaviour
 {
     public GameObject BrushContainer;
     public string CurrentID = "123456";
-    
-
-   
+    public bool isClick = false;
     public void Connect()
     {
-        //消息处理
-        NetUtility.Instance.SetDelegate((string msg) => {
-            Debug.Log(msg + "\r\n");
-        });
-        //连接服务器
-        NetUtility.Instance.ClientConnnect();
-        //开启协程
-        StartCoroutine(ServerStart());
+        if (isClick == false)
+        {
+            //消息处理
+            NetUtility.Instance.SetDelegate((string msg) => {
+                Debug.Log(msg + "\r\n");
+            });
+            //连接服务器
+            NetUtility.Instance.ClientConnnect();
+            //开启协程
+            StartCoroutine(ServerStart());
+            isClick = true;
+        }else
+        {
+            StartCoroutine(ServerStart());
+        }
+       
     }
 
 	IEnumerator ServerStart ()
@@ -56,9 +62,9 @@ public class ClientDemo : MonoBehaviour
         {
             var c = BrushContainer.transform.GetChild(i);
             NewVector _vector = new NewVector();
-            _vector.a = (double)c.transform.position.x;
-            _vector.b = (double)c.transform.position.y;
-            _vector.c = (double)c.transform.position.z;
+            _vector.a = (double)c.transform.localPosition.x;
+            _vector.b = (double)c.transform.localPosition.y;
+            _vector.c = (double)c.transform.localPosition.z;
             _data.positions.Add(_vector);
              
         }
