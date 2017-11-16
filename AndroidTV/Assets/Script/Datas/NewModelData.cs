@@ -5,11 +5,16 @@ using UnityEngine;
 public class NewModelData  {
 
     public string id;
-    public List<Vector3> positions;
     public bool currentRender;
+
+    public List<Vector3> positions;
+    public List<Color> colors;
+    
+
     public NewModelData()
     {
         positions = new List<Vector3>();
+        colors = new List<Color>();
     }
     
 }

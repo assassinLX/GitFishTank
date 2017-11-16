@@ -233,6 +233,7 @@
     <Compile Include="Assets\Script\Datas\ModelData.cs" />
     <Compile Include="Assets\Script\Datas\NewModelData.cs" />
     <Compile Include="Assets\Script\File\FileManager.cs" />
+    <Compile Include="Assets\Script\ModelDeal.cs" />
     <Compile Include="Assets\Script\NetWork\NetModel.cs" />
     <Compile Include="Assets\Script\NetWork\NetUtility.cs" />
     <Compile Include="Assets\Script\NetWork\ServerDemo.cs" />

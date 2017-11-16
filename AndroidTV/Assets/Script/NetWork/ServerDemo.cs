@@ -38,8 +38,11 @@ public class ServerDemo : MonoBehaviour
         var NewData = new NewModelData();
         NewData.id = _data.id;
         NewData.currentRender = false;
+
         Debug.Log("-----------------data id:" + _data.id);
         Debug.Log("-----------------data positions count :" + _data.positions.Count);
+        Debug.Log("-----------------data color count :" + _data.currentColors.Count);
+
         for(int i = 0; i < _data.positions.Count ; i++)
         {
             Vector3 position = new Vector3();
@@ -48,6 +51,14 @@ public class ServerDemo : MonoBehaviour
             position.z = (float)_data.positions[i].c;
             Debug.Log("--------------- position :" + position);
             NewData.positions.Add(position);
+
+            Color color = new Color();
+            color.r = (float)_data.currentColors[i].r;
+            color.g = (float)_data.currentColors[i].g;
+            color.b = (float)_data.currentColors[i].b;
+            color.a = (float)_data.currentColors[i].a;
+            NewData.colors.Add(color);
+
         }
 
         myData.Add(NewData);
