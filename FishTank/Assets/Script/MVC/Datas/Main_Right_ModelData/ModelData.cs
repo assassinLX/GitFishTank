@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ModelData{
+
+    public string IDENTIFICATION;
     public string id;
     public List<NewVector> positions;
     public List<NewColor> currentColors;

@@ -58,6 +58,12 @@ public class ClientDemo : MonoBehaviour
             CurrentID = currentModel.name;
         }
         _data.id = CurrentID;
+
+        if(transform.GetComponent<IDENTIFICATION>().CurrentIdentification != null)
+        {
+            _data.IDENTIFICATION = transform.GetComponent<IDENTIFICATION>().CurrentIdentification;
+        }
+
         for (int i = 0; i < BrushContainer.transform.GetChildCount(); i++)
         {
             var c = BrushContainer.transform.GetChild(i);

@@ -35,7 +35,8 @@ public class ColorSelector : MonoBehaviour {
 	}
 
 	void UserInputUpdate(){
-		Vector3 cursorPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, (transform.position.z - refCamera.transform.position.z));
+		Vector3 cursorPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
+            (transform.position.z - refCamera.transform.position.z));
 		Ray cursorRay = refCamera.ScreenPointToRay (cursorPos);
 		RaycastHit hit = new RaycastHit ();
 		if(Physics.Raycast(cursorRay,out hit)){
@@ -46,15 +47,15 @@ public class ColorSelector : MonoBehaviour {
 				SelectOuterColor(localPosition);
 			else
 				SelectInnerColor(localPosition);
-
-		}
+        }
 	}
 	void SelectInnerColor(Vector2 delta){
 		float v=0.0f, w=0.0f, u=0.0f;
 		Barycentric (delta,ref v,ref w,ref u);
 		if (v >= 0.15f && w >= -0.15f && u >= -0.15f) {
 			Vector3 colorVector = new Vector3 (selectedColor.r, selectedColor.g, selectedColor.b);
-			Vector3 finalColorVector = v * colorVector + u * new Vector3 (0.0f, 0.0f, 0.0f) + w * new Vector3 (1.0f, 1.0f, 1.0f);
+			Vector3 finalColorVector = v * colorVector + u * new Vector3 (0.0f, 0.0f, 0.0f) +
+                w * new Vector3 (1.0f, 1.0f, 1.0f);
 			finalColor = new Color (finalColorVector.x, finalColorVector.y, finalColorVector.z);
 
 			finalColorSprite.color=finalColor;

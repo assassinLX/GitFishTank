@@ -238,6 +238,7 @@
     <Compile Include="Assets\Script\Manager\GameSceneManager.cs" />
     <Compile Include="Assets\Script\Manager\SettingManager.cs" />
     <Compile Include="Assets\Script\MVC\Datas\Main_Left_cellData\cellDatas.cs" />
+    <Compile Include="Assets\Script\MVC\Datas\Main_Right_ModelData\IDENTIFICATION.cs" />
     <Compile Include="Assets\Script\MVC\Datas\Main_Right_ModelData\ModelData.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourMediator.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
