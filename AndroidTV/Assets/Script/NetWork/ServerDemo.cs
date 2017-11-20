@@ -12,7 +12,8 @@ public class ServerDemo : MonoBehaviour
  
 	Vector2 scrollViewPosition;
     public List<NewModelData> myData;
-
+    public delegate void SettingCurrentDisplayModel(string PeopleID);
+    public SettingCurrentDisplayModel SetModel;
 
 	void Start ()
 	{
@@ -20,7 +21,7 @@ public class ServerDemo : MonoBehaviour
 		scrollViewPosition = Vector2.zero;
 		//消息委托
 		NetUtility.Instance.SetDelegate ((string msg) => {
-			//Debug.Log ("-"+msg);
+			Debug.Log ("-"+msg);
 		});
         NetUtility.Instance.SetGoodMessage((string msg) =>
         {
@@ -32,16 +33,19 @@ public class ServerDemo : MonoBehaviour
 
     void CreateModel(string msg)
     {
-        Debug.Log("-----------#########----------------"+msg);
+        //Debug.Log("-----------#########----------------"+msg);
         var _data = FileManager.AnalyticData<ModelData>(msg);
 
         var NewData = new NewModelData();
         NewData.id = _data.id;
         NewData.currentRender = false;
+        NewData.PeopleID = _data.IDENTIFICATION;
 
-        Debug.Log("-----------------data id:" + _data.id);
-        Debug.Log("-----------------data positions count :" + _data.positions.Count);
-        Debug.Log("-----------------data color count :" + _data.currentColors.Count);
+        //Debug.Log("NewData.PeopleID : -----"+ NewData.PeopleID);
+        //Debug.Log("-----------------data id:" + _data.id);
+
+        //Debug.Log("-----------------data positions count :" + _data.positions.Count);
+        //Debug.Log("-----------------data color count :" + _data.currentColors.Count);
 
         for(int i = 0; i < _data.positions.Count ; i++)
         {
@@ -49,7 +53,7 @@ public class ServerDemo : MonoBehaviour
             position.x = (float)_data.positions[i].a;
             position.y = (float)_data.positions[i].b;
             position.z = (float)_data.positions[i].c;
-            Debug.Log("--------------- position :" + position);
+            //Debug.Log("--------------- position :" + position);
             NewData.positions.Add(position);
 
             Color color = new Color();
@@ -60,9 +64,29 @@ public class ServerDemo : MonoBehaviour
             NewData.colors.Add(color);
 
         }
-
         myData.Add(NewData);
+        Debug.Log("###########______________############## 当前的数据有几个" + myData.Count);
+        ClearDatas(myData);
+        Debug.Log("###########______________############## 当前的数据有几个" + myData.Count);
     }
 
+    //清理当前重复的数组
+    private void ClearDatas(List<NewModelData> datas)
+    {
+        for (int i = datas.Count - 1; i >= 0; i--)
+        {
+            for (int t = i - 1; t >= 0; t--)
+            {
+                if (datas[i].PeopleID == datas[t].PeopleID)
+                {
+                    datas.RemoveAt(t);
+                    SetModel(datas[t].PeopleID);
+                }
+            }
+
+        }
+    }
+
+ 
 
 }

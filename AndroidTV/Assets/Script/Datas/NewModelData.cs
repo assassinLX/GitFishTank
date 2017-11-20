@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewModelData  {
 
+    public string PeopleID;
     public string id;
     public bool currentRender;
 

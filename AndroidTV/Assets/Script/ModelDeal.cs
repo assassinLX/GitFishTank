@@ -6,11 +6,14 @@ public class ModelDeal : MonoBehaviour {
     public GameObject MainScene;
     public GameObject BrushContainer;
     public GameObject BrushEntity;
+    public string PeopleID;
+
     public void SetModel(string name)
     {
         var path = "Model/" + name;
         var model = (GameObject)Resources.Load(path);
         var CloneModel = Instantiate(model, MainScene.transform);
+        
     }
 	
     public void SetBrush(Vector3 position,Color color)

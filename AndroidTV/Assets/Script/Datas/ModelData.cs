@@ -6,6 +6,7 @@ public class ModelData{
     public string id;
     public List<NewVector> positions;
     public List<NewColor> currentColors;
+    public string IDENTIFICATION;
 
     public ModelData()
     {
