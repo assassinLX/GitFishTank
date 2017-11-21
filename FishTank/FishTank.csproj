@@ -242,6 +242,8 @@
     <Compile Include="Assets\Script\MVC\Datas\Main_Right_ModelData\ModelData.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourMediator.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
+    <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructMediator.cs" />
+    <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructView.cs" />
     <Compile Include="Assets\Script\netWork\ClientDemo.cs" />
     <Compile Include="Assets\Script\netWork\NetModel.cs" />
     <Compile Include="Assets\Script\netWork\NetUtility.cs" />

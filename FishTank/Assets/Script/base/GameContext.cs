@@ -14,5 +14,6 @@ public class GameContext : MVCSContext {
 		base.mapBindings();
 		commandBinder.Bind(ContextEvent.START).To<GameCommand>().Once();
 		mediationBinder.Bind<ClourView>().To<ClourMediator>();
+        mediationBinder.Bind<InstructView>().To<InstructMediator>();
 	}
 }
