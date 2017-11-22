@@ -17,6 +17,9 @@ public class ClourView : View{
 	public Slider slider_vertical;
     public GameObject BrushContainer;
 
+    public Button SendDataBtn;
+    public ClientDemo client;
+
     public float oldAngleNumber = 0;
 
     void Awake()
@@ -27,6 +30,8 @@ public class ClourView : View{
         slider_vertical.maxValue = 360;
         slider_vertical.minValue = 0;
         slider_vertical.wholeNumbers = true;
+
+        SendDataBtn.onClick.AddListener(() => client.Connect(""));
 
         slider_horizontal.onValueChanged.AddListener(delegate {
 			horizontal(slider_horizontal.value);

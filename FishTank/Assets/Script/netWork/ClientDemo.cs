@@ -12,7 +12,10 @@ public class ClientDemo : MonoBehaviour
     public GameObject BrushContainer;
     public string CurrentID = "123456";
     public bool isClick = false;
-    public void Connect()
+
+    
+
+    public void Connect(string isSendInstruct)
     {
         if (isClick == false)
         {
@@ -23,20 +26,21 @@ public class ClientDemo : MonoBehaviour
             //连接服务器
             NetUtility.Instance.ClientConnnect();
             //开启协程
-            StartCoroutine(ServerStart());
+            StartCoroutine(ServerStart(isSendInstruct));
             isClick = true;
         }else
         {
-            StartCoroutine(ServerStart());
+            StartCoroutine(ServerStart(isSendInstruct));
         }
        
     }
 
-	IEnumerator ServerStart ()
+	IEnumerator ServerStart (string isSendInstruct)
 	{
         yield return new WaitForSeconds(0.1f);
+        Debug.Log("ServerStart");
         //编码获取内容
-        string content = getContent();
+        string content = getUniteData(isSendInstruct);
         //内容测试
 		Debug.Log (content);
 		//待发送对象
@@ -49,7 +53,31 @@ public class ClientDemo : MonoBehaviour
 		NetUtility.Instance.SendMsg (nm);
 	}
 
-     string getContent()
+
+    string getUniteData(string isSendInstruct)
+    {
+        MainUniteData _uniteData = new MainUniteData();
+        if(isSendInstruct == "" || isSendInstruct == null)
+        {
+            Debug.Log("come on");
+            _uniteData.ColorData = getColorDataContent();
+            _uniteData.instructData = null;
+            _uniteData.isInstruct = MainUniteData.currentState.colorData;
+        }
+        else
+        {
+            _uniteData.ColorData = null;
+            _uniteData.instructData = isSendInstruct;
+            _uniteData.isInstruct = MainUniteData.currentState.instructData;
+            
+        }
+        string content = JsonMapper.ToJson(_uniteData);
+        Debug.Log(content);
+        return content;
+    }
+
+
+     ModelData getColorDataContent()
     {
         ModelData _data = new ModelData();
         var currentModel = GameObject.FindGameObjectWithTag("Model");
@@ -58,13 +86,12 @@ public class ClientDemo : MonoBehaviour
             CurrentID = currentModel.name;
         }
         _data.id = CurrentID;
-
         if(transform.GetComponent<IDENTIFICATION>().CurrentIdentification != null)
         {
             _data.IDENTIFICATION = transform.GetComponent<IDENTIFICATION>().CurrentIdentification;
         }
 
-        for (int i = 0; i < BrushContainer.transform.GetChildCount(); i++)
+        for (int i = 0; i < BrushContainer.transform.childCount; i++)
         {
             var c = BrushContainer.transform.GetChild(i);
             NewVector _vector = new NewVector();
@@ -80,19 +107,16 @@ public class ClientDemo : MonoBehaviour
             _color.a = (double)render.color.a;
             _data.currentColors.Add(_color);
         }
-        Debug.Log("current id :"+_data.id);
-        foreach (var i in _data.positions)
-        {
-            Debug.Log("current Data - position :" +i);
-        }
-
-        foreach (var i in _data.currentColors)
-        {
-            Debug.Log("current Data color :" + i);
-        }
-        string content = JsonMapper.ToJson(_data);
-        Debug.Log(content);
-        return content;
+       // string content = JsonMapper.ToJson(_data);
+       // Debug.Log(content);
+        return _data;
     }
+
+
+
+
+
+
+
 
 }

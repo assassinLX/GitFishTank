@@ -13,14 +13,23 @@ public class InstructView : View
     public GameObject[] AboutColorFish;
     public GameObject InstructMode;
 
+    public Button[] btn_Group;
+    public ClientDemo currentClient;
 
-
-    private void Awake()
+     override protected void Awake()
     {
         ColorBtn.onClick.AddListener(() => ControllerUI("Color"));
         InstructBtn.onClick.AddListener( () => ControllerUI("Instruct"));
+        foreach (var btn in btn_Group)
+        {
+            btn.onClick.AddListener(() => SendInstruct(btn.name));
+        }
     }
     
+    void SendInstruct(string currentInstruct)
+    {
+        currentClient.Connect(currentInstruct);
+    }
 
     void ControllerUI(string name)
     {
