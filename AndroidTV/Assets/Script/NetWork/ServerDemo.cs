@@ -25,17 +25,31 @@ public class ServerDemo : MonoBehaviour
 		});
         NetUtility.Instance.SetGoodMessage((string msg) =>
         {
-            CreateModel(msg);
+            getUniteData(msg);
         });
 		//开启服务器
 		NetUtility.Instance.ServerStart ();
 	}
 
-    void CreateModel(string msg)
-    {
-        //Debug.Log("-----------#########----------------"+msg);
-        var _data = FileManager.AnalyticData<ModelData>(msg);
 
+    private void getUniteData(string unitedate)
+    {
+        Debug.Log(unitedate);
+        UniteData currentData = FileManager.AnalyticData<UniteData>(unitedate);
+        if(currentData.isInstruct == UniteData.currentState.colorData)
+        {
+            CreateModel(currentData.ColorData);
+        }
+        else
+        {
+            Debug.Log(currentData.instructData);
+        }
+    }
+    
+
+
+    void CreateModel(ModelData _data)
+    {
         var NewData = new NewModelData();
         NewData.id = _data.id;
         NewData.currentRender = false;
@@ -88,5 +102,5 @@ public class ServerDemo : MonoBehaviour
     }
 
  
-
+    
 }
