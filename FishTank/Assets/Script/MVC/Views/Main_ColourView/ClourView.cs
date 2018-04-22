@@ -119,13 +119,16 @@ public class ClourView : View{
 
     private void ListenerCell(int id){
         var Display3DFishChildlens = GameObject.FindGameObjectsWithTag("Model");
-        for (var i = 0 ; i < Display3DFishChildlens.Length; i++){
-            Destroy(Display3DFishChildlens[i].gameObject);
+        if(Display3DFishChildlens != null){
+            for (var i = 0 ; i < Display3DFishChildlens.Length; i++){
+                Destroy(Display3DFishChildlens[i].gameObject);
+            }
+            for (var i = 0; i<BrushContainer.transform.GetChildCount(); i++)
+            {
+                Destroy(BrushContainer.transform.GetChild(i).gameObject);
+            }
         }
-        for (var i = 0; i<BrushContainer.transform.GetChildCount(); i++)
-        {
-            Destroy(BrushContainer.transform.GetChild(i).gameObject);
-        }
+        
         var model = Resources.Load(ResourceModelPath + "Cube"+id,typeof(GameObject));
         var displayModel = (GameObject)Instantiate(model,Display3DFish.transform);
         
