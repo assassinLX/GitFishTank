@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{C904F263-2B16-9F7A-96A3-C5D7C6CF6DD6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/NetWork/ServerDemo.cs">
+    <Files>
+      <File FileName="Assets/Script/NetWork/ServerDemo.cs" Line="90" Column="86" />
+      <File FileName="Assets/Script/Datas/NewModelData.cs" Line="15" Column="12" />
+      <File FileName="Assets/Script/Datas/UniteData.cs" Line="15" Column="28" />
+      <File FileName="Assets/Script/Datas/ModelData.cs" Line="16" Column="14" />
+      <File FileName="Assets/Script/DataDisplay.cs" Line="70" Column="62" />
+      <File FileName="Assets/Script/ModelDeal.cs" Line="25" Column="45" />
+      <File FileName="Assets/Script/File/FileManager.cs" Line="50" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.AndroidTV PreferredExecutionTarget="Unity.Editor" />
+  <MultiItemStartupConfigurations />
+</Properties>

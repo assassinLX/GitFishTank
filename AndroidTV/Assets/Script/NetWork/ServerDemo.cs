@@ -67,6 +67,7 @@ public class ServerDemo : MonoBehaviour
             position.x = (float)_data.positions[i].a;
             position.y = (float)_data.positions[i].b;
             position.z = (float)_data.positions[i].c;
+
             //Debug.Log("--------------- position :" + position);
             NewData.positions.Add(position);
 
@@ -77,6 +78,11 @@ public class ServerDemo : MonoBehaviour
             color.a = (float)_data.currentColors[i].a;
             NewData.colors.Add(color);
 
+            Vector3 currentScale = new Vector3();
+            currentScale.x = (float)_data.scale[i].a;
+            currentScale.y = (float)_data.scale[i].b;
+            currentScale.z = (float)_data.scale[i].c;
+            NewData.scale.Add(currentScale);
         }
         myData.Add(NewData);
         Debug.Log("###########______________############## 当前的数据有几个" + myData.Count);

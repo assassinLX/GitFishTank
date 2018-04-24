@@ -16,11 +16,12 @@ public class ModelDeal : MonoBehaviour {
         
     }
 	
-    public void SetBrush(Vector3 position,Color color)
+    public void SetBrush(Vector3 position,Color color,Vector3 scale)
     {
         var entity = Instantiate(BrushEntity, BrushContainer.transform);
         var render = entity.GetComponent<SpriteRenderer>();
         entity.transform.localPosition = position;
         render.color = color;
+        entity.transform.localScale = scale;
     }
 }

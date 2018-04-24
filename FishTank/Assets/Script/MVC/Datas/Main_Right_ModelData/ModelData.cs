@@ -8,11 +8,12 @@ public class ModelData{
     public string id;
     public List<NewVector> positions;
     public List<NewColor> currentColors;
-
+    public List<NewVector> scale;
     public ModelData()
     {
         positions = new List<NewVector>();
         currentColors = new List<NewColor>();
+        scale = new List<NewVector>();
     }
     
 }

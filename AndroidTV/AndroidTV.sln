@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTV", "AndroidTV.csproj", "{C904F263-2B16-9F7A-96A3-C5D7C6CF6DD6}"
 EndProject
 Global

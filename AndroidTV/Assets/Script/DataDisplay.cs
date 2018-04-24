@@ -44,7 +44,7 @@ public class DataDisplay : MonoBehaviour {
                 if(data[i].currentRender == false)
                 {
                     Debug.Log(data[i].id);
-                    DisplayCurrentModel(data[i].id ,data[i].PeopleID, data[i].positions,data[i].colors);
+                    DisplayCurrentModel(data[i].id ,data[i].PeopleID, data[i].positions,data[i].colors,data[i].scale);
                     data[i].currentRender = true;
                 }
             }
@@ -58,7 +58,7 @@ public class DataDisplay : MonoBehaviour {
         this.PeopleID = PeopleID;
     }
 
-    private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors)
+    private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors,List<Vector3> scales)
     {
         var testModel = Instantiate(Test,this.transform);
         var name = id.Substring(0,8);
@@ -67,7 +67,7 @@ public class DataDisplay : MonoBehaviour {
         deal.PeopleID = peopleID;
         for(int i = 0; i < positions.Count; i++)
         {
-            deal.SetBrush(positions[i], colors[i]);
+            deal.SetBrush(positions[i], colors[i],scales[i]);
         }
 
     }

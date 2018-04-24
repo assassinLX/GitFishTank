@@ -18,6 +18,7 @@ public class InstructView : View
 
      override protected void Awake()
     {
+        base.Awake();
         ColorBtn.onClick.AddListener(() => ControllerUI("Color"));
         InstructBtn.onClick.AddListener( () => ControllerUI("Instruct"));
         foreach (var btn in btn_Group)
@@ -28,12 +29,18 @@ public class InstructView : View
     
     void SendInstruct(string currentInstruct)
     {
-        currentClient.Connect(currentInstruct);
+        if(currentClient != null){
+            currentClient.Connect(currentInstruct);
+        }else{
+            Debug.Log("当前还没有发送颜色数据");
+        }
+       
     }
 
-    void ControllerUI(string name)
+    void ControllerUI(string _name)
     {
-        if(name == "Color")
+        Debug.Log("name : "+_name);
+        if(_name == "Color")
         {
             ColorBtn.GetComponent<Image>().sprite = HeightLight;
             InstructBtn.GetComponent<Image>().sprite = normal;

@@ -100,12 +100,19 @@ public class ClientDemo : MonoBehaviour
             _vector.c = (double)c.transform.localPosition.z;
             _data.positions.Add(_vector);
             NewColor _color = new NewColor();
+
             var render = c.transform.GetComponent<SpriteRenderer>();
             _color.r = (double)render.color.r;
             _color.g = (double)render.color.g;
             _color.b = (double)render.color.b;
             _color.a = (double)render.color.a;
             _data.currentColors.Add(_color);
+
+            NewVector _scale = new NewVector();
+            _scale.a = (double)c.transform.localScale.x;
+            _scale.b = (double)c.transform.localScale.y;
+            _scale.c = (double)c.transform.localScale.z;
+            _data.scale.Add(_scale);
         }
        // string content = JsonMapper.ToJson(_data);
        // Debug.Log(content);

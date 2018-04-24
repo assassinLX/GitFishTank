@@ -10,12 +10,13 @@ public class NewModelData  {
 
     public List<Vector3> positions;
     public List<Color> colors;
-    
+    public List<Vector3> scale;
 
     public NewModelData()
     {
         positions = new List<Vector3>();
         colors = new List<Color>();
+        scale = new List<Vector3>();
     }
     
 }
