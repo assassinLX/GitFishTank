@@ -38,8 +38,10 @@ public class ClourView : View{
 		});	
 		slider_vertical.onValueChanged.AddListener(delegate {
 			vertical(slider_vertical.value);
-		}); 
-        GetNetworkDatas("");
+		});
+        //GetNetworkDatas("");
+        var text = Resources.Load("JSON/data");
+        AnalyticData(text.ToString());
     }
 
 
@@ -77,26 +79,26 @@ public class ClourView : View{
         return null;
     }
 
-    private void GetNetworkDatas(string url){
-		StartCoroutine(NetWorkGetDatas(url));
-	}
+ //   private void GetNetworkDatas(string url){
+	//	StartCoroutine(NetWorkGetDatas(url));
+	//}
 
-	private IEnumerator<object> NetWorkGetDatas(string name)
-    {
-        string NetworkString = "http://localhost:8888/" + name;
-        WWW www = new WWW(NetworkString);
-        yield return www;
-        string netDatas_info = string.Empty;
-        if (www.error != null)
-        {
-            netDatas_info = www.error;
-            yield return null;
-        }
-        netDatas_info = www.text;
-        yield return netDatas_info;
-        // Debug.Log(netDatas_info);
-         AnalyticData(netDatas_info);
-    }
+	//private IEnumerator<object> NetWorkGetDatas(string name)
+    //{
+    //    string NetworkString = "http://localhost:8888/" + name;
+    //    WWW www = new WWW(NetworkString);
+    //    yield return www;
+    //    string netDatas_info = string.Empty;
+    //    if (www.error != null)
+    //    {
+    //        netDatas_info = www.error;
+    //        yield return null;
+    //    }
+    //    netDatas_info = www.text;
+    //    yield return netDatas_info;
+    //    // Debug.Log(netDatas_info);
+    //     AnalyticData(netDatas_info);
+    //}
 
     private  void AnalyticData(string info)
     {
