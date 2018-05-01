@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{65C5E3A0-8CC1-DCE4-FF59-E0CF52C396BE}|">
   <MonoDevelop.Ide.ItemProperties.FishTank PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MVC/Views/Main_InstructView/InstructView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/base/GameCommand.cs">
     <Files>
-      <File FileName="Assets/Script/MVC/Datas/Main_Right_ModelData/ModelData.cs" Line="16" Column="14" />
-      <File FileName="Assets/Script/netWork/ClientDemo.cs" Line="82" Column="35" />
-      <File FileName="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs" Line="133" Column="25" />
-      <File FileName="Assets/Script/MVC/Views/Main_InstructView/InstructView.cs" Line="32" Column="25" />
-      <File FileName="Assets/StrangeIoC/scripts/strange/extensions/mediation/impl/View.cs" Line="33" Column="15" />
-      <File FileName="Assets/Script/netWork/NetUtility.cs" Line="145" Column="12" />
+      <File FileName="Assets/Script/MVC/Views/Star_MainView/BtnsDisplayEffect.cs" Line="20" Column="57" />
+      <File FileName="Assets/Script/Shader/WaterWaveEffect.cs" Line="20" Column="5" />
+      <File FileName="Assets/Script/Component/L_cell_display.cs" Line="11" Column="1" />
+      <File FileName="Assets/Script/netWork/ClientDemo.cs" Line="53" Column="30" />
+      <File FileName="Assets/Script/netWork/NetUtility.cs" Line="171" Column="3" />
+      <File FileName="Assets/Script/netWork/NetModel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/base/GameCommand.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

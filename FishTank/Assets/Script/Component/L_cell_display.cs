@@ -8,7 +8,7 @@ public class L_cell_display : MonoBehaviour {
 		var cell_image = Resources.Load(ResourceImagePath + obj.imageName,typeof(Sprite));
 		Debug.Log(ResourceImagePath);
         transform.Find("Image").GetComponent<Image>().sprite = (Sprite)cell_image;
-        transform.Find("Name").GetComponent<Text>().text = obj.name;
-		transform.Find("Describe").GetComponent<Text>().text = obj.describe;
+        transform.GetChild(0).Find("Name").GetComponent<Text>().text = obj.name;;
+        transform.GetChild(0).Find("Describe").GetComponent<Text>().text = obj.describe;
 	}
 }

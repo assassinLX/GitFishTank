@@ -131,9 +131,12 @@
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructMediator.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructView.cs" />
+    <Compile Include="Assets\Script\MVC\Views\Star_MainView\BtnsDisplayEffect.cs" />
     <Compile Include="Assets\Script\netWork\ClientDemo.cs" />
     <Compile Include="Assets\Script\netWork\NetModel.cs" />
     <Compile Include="Assets\Script\netWork\NetUtility.cs" />
+    <Compile Include="Assets\Script\Shader\PostEffectBase.cs" />
+    <Compile Include="Assets\Script\Shader\WaterWaveEffect.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\ICommand.cs" />
@@ -250,6 +253,7 @@
   <ItemGroup>
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ColorSelector\Shaders\ColorSelector.shader" />
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ReadMe.txt" />
+    <None Include="Assets\Script\Shader\WaterEffect.shader" />
     <None Include="Assets\StrangeIoC\scripts\strange\extensions\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
