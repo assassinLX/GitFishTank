@@ -41,6 +41,7 @@ public class ClourView : View{
 		});
         //GetNetworkDatas("");
         var text = Resources.Load("JSON/data");
+        Debug.Log(text);
         AnalyticData(text.ToString());
     }
 
@@ -112,6 +113,7 @@ public class ClourView : View{
             }
             var btn = cell.GetComponent<Button>();
             var id = Datas_L_displayCell[i].id;
+            //Debug.Log("id :" + id);
             if(btn != null){
                 btn.onClick.AddListener(() => ListenerCell(id));
             }
@@ -119,7 +121,7 @@ public class ClourView : View{
         }
     }
 
-    private void ListenerCell(int id){
+    private void ListenerCell(string id){
         var Display3DFishChildlens = GameObject.FindGameObjectsWithTag("Model");
         if(Display3DFishChildlens != null){
             for (var i = 0 ; i < Display3DFishChildlens.Length; i++){
@@ -131,7 +133,7 @@ public class ClourView : View{
             }
         }
         
-        var model = Resources.Load(ResourceModelPath + "Cube"+id,typeof(GameObject));
+        var model = Resources.Load(ResourceModelPath + id,typeof(GameObject));
         var displayModel = (GameObject)Instantiate(model,Display3DFish.transform);
         
     }

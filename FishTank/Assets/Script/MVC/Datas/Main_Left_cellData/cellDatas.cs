@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public struct cellDatas {
-	public int id;
+    public string id;
 	public string name;
 
 	//this is describe to cell

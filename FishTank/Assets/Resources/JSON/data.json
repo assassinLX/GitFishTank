@@ -1,17 +1,17 @@
-[{
-            "id": 1001,
+[       {
+            "id": "Cube1001",
             "imageName": "shark",
             "name": "fish001",
             "describe": "this is shark"
         },
         {
-            "id": 1002,
+            "id": "Cube1002",
             "imageName": "someFish",
             "name": "fish002",
             "describe": "this is someFish"
         },
         {
-            "id": 1003,
+            "id": "Cube1003",
             "imageName": "shark",
             "name": "fish003",
             "describe": "this is shark"
