@@ -11,6 +11,7 @@ public class ModelDeal : MonoBehaviour {
     public void SetModel(string name)
     {
         var path = "Model/" + name;
+        Debug.Log("path : "+path);
         var model = (GameObject)Resources.Load(path);
         var CloneModel = Instantiate(model, MainScene.transform);
         

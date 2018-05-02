@@ -61,7 +61,7 @@ public class DataDisplay : MonoBehaviour {
     private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors,List<Vector3> scales)
     {
         var testModel = Instantiate(Test,this.transform);
-        var name = id.Substring(0,8);
+        var name = id.Substring(0,id.Length - 7);
         ModelDeal deal = testModel.GetComponent<ModelDeal>();
         deal.SetModel(name);
         deal.PeopleID = peopleID;
