@@ -30,10 +30,11 @@ public class NetUtility
 	/// 设置网络节点
 	/// </summary>
 	/// <param name="ep">网络节点.</param>
-	public void SetIpAddressAndPort (IPEndPoint ep)
+    public void SetIpAddressAndPort (string ep)
 	{
+        
 		//只写网络节点
-		serverIPEndPoint = ep;
+        serverIPEndPoint = new IPEndPoint(IPAddress.Parse(ep),23456);
 	}
 
 

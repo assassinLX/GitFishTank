@@ -4,6 +4,8 @@ using System.Text;
 using System;
 using LitJson;
 
+using System.Net;
+using System.Net.Sockets;
 /// <summary>
 /// 客户端实现
 /// </summary>
@@ -11,13 +13,13 @@ public class ClientDemo : MonoBehaviour
 {
     public GameObject BrushContainer;
     public string CurrentID = "123456";
-    public bool isClick = false;
+
 
     
 
     public void Connect(string isSendInstruct)
     {
-        if (isClick == false)
+        if (SettingManager.instance.isClick == false)
         {
             //消息处理
             NetUtility.Instance.SetDelegate((string msg) => {
@@ -27,7 +29,7 @@ public class ClientDemo : MonoBehaviour
             NetUtility.Instance.ClientConnnect();
             //开启协程
             StartCoroutine(ServerStart(isSendInstruct));
-            isClick = true;
+            SettingManager.instance.isClick = true;
         }else
         {
             StartCoroutine(ServerStart(isSendInstruct));
@@ -45,8 +47,9 @@ public class ClientDemo : MonoBehaviour
 		Debug.Log (content);
 		//待发送对象
 		NetModel nm = new NetModel ();
-		//消息体
-		nm.senderIp = "127.0.0.1";
+        //消息体
+        //nm.senderIp = "127.0.0.1";
+        nm.senderIp = "127.0.0.1";
 		nm.content = content;
 		nm.time = DateTime.Now.ToString ();
 		//发送数据对象

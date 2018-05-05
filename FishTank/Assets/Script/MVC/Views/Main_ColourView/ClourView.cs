@@ -39,9 +39,8 @@ public class ClourView : View{
 		slider_vertical.onValueChanged.AddListener(delegate {
 			vertical(slider_vertical.value);
 		});
-        //GetNetworkDatas("");
-        var text = Resources.Load("JSON/data");
-        Debug.Log(text);
+        TextAsset text = (TextAsset)Resources.Load("JSON/data");
+        Debug.Log(text.text);
         AnalyticData(text.ToString());
     }
 
@@ -80,30 +79,10 @@ public class ClourView : View{
         return null;
     }
 
- //   private void GetNetworkDatas(string url){
-	//	StartCoroutine(NetWorkGetDatas(url));
-	//}
-
-	//private IEnumerator<object> NetWorkGetDatas(string name)
-    //{
-    //    string NetworkString = "http://localhost:8888/" + name;
-    //    WWW www = new WWW(NetworkString);
-    //    yield return www;
-    //    string netDatas_info = string.Empty;
-    //    if (www.error != null)
-    //    {
-    //        netDatas_info = www.error;
-    //        yield return null;
-    //    }
-    //    netDatas_info = www.text;
-    //    yield return netDatas_info;
-    //    // Debug.Log(netDatas_info);
-    //     AnalyticData(netDatas_info);
-    //}
-
     private  void AnalyticData(string info)
     {
         Datas_L_displayCell = FileManager.AnalyticData<List<cellDatas>>(info);
+        Debug.Log("~!~!~!~!~!~!~!~!~! : ==== " +Datas_L_displayCell.Count);
         for(int i = 0;i < Datas_L_displayCell.Count;i++){
             var cell = Instantiate(L_displayCell,L_displayCell_father);
             var cell_Component = cell.GetComponent<L_cell_display>();
@@ -113,7 +92,6 @@ public class ClourView : View{
             }
             var btn = cell.GetComponent<Button>();
             var id = Datas_L_displayCell[i].id;
-            //Debug.Log("id :" + id);
             if(btn != null){
                 btn.onClick.AddListener(() => ListenerCell(id));
             }

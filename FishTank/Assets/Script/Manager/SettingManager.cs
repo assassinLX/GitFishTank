@@ -13,6 +13,6 @@ public class SettingManager : MonoBehaviour {
 		}
 	}
 
-	 
+    public bool isClick = false;
 
 }
