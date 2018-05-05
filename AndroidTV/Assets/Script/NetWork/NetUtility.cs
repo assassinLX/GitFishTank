@@ -61,8 +61,8 @@ public class NetUtility
 	/// </summary>
 	private NetUtility ()
 	{
-		//服务器实例
-		tcpServer = new TcpListener (IPAddress.Any, 23456);
+        //服务器实例
+        tcpServer = new TcpListener (IPAddress.Any, 23456);
 		//客户端实例
 		tcpClient = new TcpClient (AddressFamily.InterNetwork);
 		//缓冲区初始化
@@ -81,8 +81,9 @@ public class NetUtility
 	/// </summary>
 	public void ServerStart ()
 	{
-		//开启服务器
-		tcpServer.Start (10);
+        //开启服务器
+        tcpServer.Start (10);
+
 		//服务器开启提示
 		ReceiveCallback ("Server Has Init!");
 		//开始异步接受客户端的连接请求
