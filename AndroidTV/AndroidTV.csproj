@@ -128,6 +128,7 @@
   <ItemGroup>
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ColorSelector\Shaders\ColorSelector.shader" />
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ReadMe.txt" />
+    <None Include="Assets\Water\Underwater_FX\Shaders\AlphaSelfIllum_NoFog.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

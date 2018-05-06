@@ -14,7 +14,9 @@ public class ModelDeal : MonoBehaviour {
         Debug.Log("path : "+path);
         var model = (GameObject)Resources.Load(path);
         var CloneModel = Instantiate(model, MainScene.transform);
-        
+        CloneModel.transform.localPosition = new Vector3(0,0.9f,5.6f);
+        CloneModel.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            
     }
 	
     public void SetBrush(Vector3 position,Color color,Vector3 scale)
