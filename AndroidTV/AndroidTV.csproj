@@ -121,6 +121,7 @@
     <Compile Include="Assets\Script\Datas\UniteData.cs" />
     <Compile Include="Assets\Script\File\FileManager.cs" />
     <Compile Include="Assets\Script\ModelDeal.cs" />
+    <Compile Include="Assets\Script\RunState.cs" />
     <Compile Include="Assets\Script\NetWork\NetModel.cs" />
     <Compile Include="Assets\Script\NetWork\NetUtility.cs" />
     <Compile Include="Assets\Script\NetWork\ServerDemo.cs" />
