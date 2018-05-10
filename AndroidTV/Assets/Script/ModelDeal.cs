@@ -14,7 +14,8 @@ public class ModelDeal : MonoBehaviour {
         Debug.Log("path : "+path);
         var model = (GameObject)Resources.Load(path);
         var CloneModel = Instantiate(model, MainScene.transform);
-        CloneModel.transform.localPosition = new Vector3(0,0.9f,5.6f);
+        //CloneModel.transform.localPosition = new Vector3(0,0.9f,5.6f);
+        CloneModel.transform.position = new Vector3(-2.47f,-1.74f,12.73f);
         CloneModel.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             
     }

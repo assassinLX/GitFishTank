@@ -33,8 +33,8 @@ public class RunState : MonoBehaviour
 
 	private void Awake()
 	{
-        RadiiValue = 5.0f;
-        chooseRadiiNumber = 4;
+        RadiiValue = 2.0f;
+        chooseRadiiNumber = 5;
         CurrentState = State.Idle;
         TargePositions = new Vector3[chooseRadiiNumber];
         calTargePoint();
@@ -79,7 +79,7 @@ public class RunState : MonoBehaviour
         yield return new WaitForSeconds(7.0f);
         index++;
 
-        if (index % chooseRadiiNumber * 4 == 0 && index > 0) {
+        if (index % (chooseRadiiNumber * 1) == 0 && index > 0) {
             index = 0;
             calTargePoint();
         }
@@ -93,12 +93,24 @@ public class RunState : MonoBehaviour
     private void calTargePoint()
     {
         ClearCube();
-        for (int i = 0; i < TargePositions.Length; i++)
+        var initPoint = new Vector3(-2.47f, -1.74f, 12.73f);
+        var _TargePosition = new Vector3 [100];
+        for (int i = 0; i < _TargePosition.Length/2; i++)
         {
             float x = Random.RandomRange(-RadiiValue,RadiiValue);
             float y = Mathf.Sqrt(RadiiValue * RadiiValue - x * x);
-            TargePositions[i] = new Vector3(transform.localPosition.x+x, -1.9f, transform.localPosition.z+y);
-            CreateCube(TargePositions[i]);
+            _TargePosition[i] = new Vector3(initPoint.x + x, -2.166806f, initPoint.z+y);
+            //CreateCube(_TargePosition[i]);
+        }
+        for (int i = _TargePosition.Length / 2; i < _TargePosition.Length ;i++){
+            float x = Random.RandomRange(-RadiiValue, RadiiValue);
+            float y = -Mathf.Sqrt(RadiiValue * RadiiValue - x * x);
+            _TargePosition[i] = new Vector3(initPoint.x + x, -2.166806f, initPoint.z+y);
+            //CreateCube(_TargePosition[i]);
+        }
+        for (int i = 0; i < TargePositions.Length;i++){
+            TargePositions[i] = _TargePosition[ _TargePosition.Length / TargePositions.Length * i];
+            CreateCube(_TargePosition[i]);
         }
     }
 
