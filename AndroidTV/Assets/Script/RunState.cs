@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class RunState : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RunState : MonoBehaviour
     {
         Idle, Eat
     }
+
     [SerializeField]
     private State state;
     public State CurrentState
@@ -31,8 +33,8 @@ public class RunState : MonoBehaviour
 
 	private void Awake()
 	{
-        RadiiValue = 3.0f;
-        chooseRadiiNumber = 10;
+        RadiiValue = 5.0f;
+        chooseRadiiNumber = 4;
         CurrentState = State.Idle;
         TargePositions = new Vector3[chooseRadiiNumber];
         calTargePoint();
@@ -70,39 +72,48 @@ public class RunState : MonoBehaviour
     private IEnumerator Idle()
     {
         yield return new WaitForSeconds(0.2f);
-
-        while(Vector3.Distance(TargePositions[index % chooseRadiiNumber],transform.position) > 1.0f){
-            yield return new WaitForSeconds(0.1f);
-            move(TargePositions[index % chooseRadiiNumber]);   
-        }
+       
+        transform.DOMove(TargePositions[index % chooseRadiiNumber],7.0f);
+        transform.DOLookAt(TargePositions[index % chooseRadiiNumber], 4.0f);
+  
+        yield return new WaitForSeconds(7.0f);
         index++;
-        if(index >= 1000000000){
+
+        if (index % chooseRadiiNumber * 4 == 0 && index > 0) {
             index = 0;
+            calTargePoint();
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.3f);
         callBack();
     }
 
 
-    private void move(Vector3 targePoint){
-        Debug.Log(targePoint);
-        var currentVec = targePoint - transform.position;
-        //Quaternion rotate = Quaternion.LookRotation(currentVec.normalized);
-        //transform.rotation = Quaternion.Slerp(transform.rotation,
-        //rotate, 1.0f * Time.deltaTime);
-        transform.position += currentVec.normalized * 1 * Time.deltaTime;
-    }
+
 
     private void calTargePoint()
     {
+        ClearCube();
         for (int i = 0; i < TargePositions.Length; i++)
         {
-            float x = Random.RandomRange(-RadiiValue, RadiiValue);
+            float x = Random.RandomRange(-RadiiValue,RadiiValue);
             float y = Mathf.Sqrt(RadiiValue * RadiiValue - x * x);
-            TargePositions[i] = new Vector3(transform.position.x+x, 0, transform.position.z+y);
-            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            cube.transform.position = new Vector3(transform.position.x + x, 0, transform.position.z + y);
-            cube.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+            TargePositions[i] = new Vector3(transform.localPosition.x+x, -1.9f, transform.localPosition.z+y);
+            CreateCube(TargePositions[i]);
+        }
+    }
+
+
+    private void CreateCube(Vector3 targePoit){
+        var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.position = targePoit;
+        cube.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+        cube.tag = "Cube";
+    }
+
+    private void ClearCube(){
+        var cubes = GameObject.FindGameObjectsWithTag("Cube");
+        foreach(var a in cubes){
+            Destroy(a);
         }
     }
 
