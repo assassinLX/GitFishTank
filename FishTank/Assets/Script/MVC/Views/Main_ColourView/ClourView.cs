@@ -27,6 +27,7 @@ public class ClourView : View{
         slider_horizontal.maxValue = 360;
         slider_horizontal.minValue = 0;
         slider_horizontal.wholeNumbers = true;
+
         slider_vertical.maxValue = 360;
         slider_vertical.minValue = 0;
         slider_vertical.wholeNumbers = true;

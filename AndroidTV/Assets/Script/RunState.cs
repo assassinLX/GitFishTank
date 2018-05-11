@@ -73,10 +73,10 @@ public class RunState : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
        
-        transform.DOMove(TargePositions[index % chooseRadiiNumber],7.0f);
-        transform.DOLookAt(TargePositions[index % chooseRadiiNumber], 4.0f);
+        transform.DOMove(TargePositions[index % chooseRadiiNumber],10.0f);
+        transform.DOLookAt(TargePositions[index % chooseRadiiNumber], 10.0f);
   
-        yield return new WaitForSeconds(7.0f);
+        yield return new WaitForSeconds(10.0f);
         index++;
 
         if (index % (chooseRadiiNumber * 1) == 0 && index > 0) {
