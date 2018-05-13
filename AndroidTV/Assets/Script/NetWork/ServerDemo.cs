@@ -20,6 +20,8 @@ public class ServerDemo : MonoBehaviour
     public delegate void SettingCurrentDisplayModel(string PeopleID);
     public SettingCurrentDisplayModel SetModel;
 
+    public string currentIns;
+
 	void Start ()
 	{
         myData = new List<NewModelData>();
@@ -35,6 +37,7 @@ public class ServerDemo : MonoBehaviour
 		//开启服务器
 		NetUtility.Instance.ServerStart ();
         IPtext.text = "请链接IP："+GetLocalIP();
+        currentIns = null;
 	}
 
 
@@ -49,6 +52,7 @@ public class ServerDemo : MonoBehaviour
         else
         {
             UnityEngine.Debug.Log(currentData.instructData);
+            currentIns = currentData.instructData;
         }
     }
     

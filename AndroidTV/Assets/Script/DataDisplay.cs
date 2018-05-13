@@ -49,6 +49,18 @@ public class DataDisplay : MonoBehaviour {
                 }
             }
         }
+
+
+        if(Sever.currentIns != null){
+            if(Sever.currentIns == "btn001"){
+                DisplayFood("FoodAmmonite");
+            }else if(Sever.currentIns == "btn002"){
+                
+            }else{
+                
+            }
+            Sever.currentIns = null;
+        }
      
     }
 
@@ -56,6 +68,16 @@ public class DataDisplay : MonoBehaviour {
     {
         isClear = true;
         this.PeopleID = PeopleID;
+    }
+
+    
+
+    private void DisplayFood(string _name){
+        var path = "Model/Food/" + _name;
+        Debug.Log("path : " + path);
+        var model = (GameObject)Resources.Load(path);
+        var CloneModel = Instantiate(model);
+        CloneModel.transform.position = new Vector3(-2.47f, -3.0f, 12.73f);
     }
 
     private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors,List<Vector3> scales)

@@ -8,6 +8,7 @@ public class RunState : MonoBehaviour
 
     public float RadiiValue;
     public int chooseRadiiNumber;
+    public GameObject food;
 
     [SerializeField]
     private int index = 0;
@@ -57,6 +58,7 @@ public class RunState : MonoBehaviour
 	{
         if(CurrentState == State.Eat){
             Debug.Log("Eat");
+            StartCoroutine(Eat());
         }else{
             Debug.Log("Idle");
             StartCoroutine(Idle());
@@ -88,6 +90,25 @@ public class RunState : MonoBehaviour
     }
 
 
+
+
+    private IEnumerator Eat(){
+        yield return new WaitForSeconds(0.2f);
+
+        transform.DOMove(food.transform.position, 4.0f);
+        transform.DOLookAt(food.transform.position, 4.0f);
+        yield return new WaitForSeconds(4.0f);
+        //播放吃的动画
+        transform.GetChild(0).GetComponent<Animation>().CrossFade("eat");
+        yield return new WaitForSeconds(0.3f);
+        Destroy(food);
+        //播放Idle动画
+        transform.GetChild(0).GetComponent<Animation>().CrossFade("swim");
+        yield return new WaitForSeconds(0.3f);
+
+        yield return new WaitForSeconds(0.3f);
+        callBack();
+    }
 
 
     private void calTargePoint()
@@ -129,18 +150,15 @@ public class RunState : MonoBehaviour
         }
     }
 
+
     private GameObject getFood(){
-        int layerMark = LayerMask.NameToLayer("Food");
-        Collider[] food = Physics.OverlapSphere(transform.position,2.0f,layerMark);
-        if(food.Length > 0){
-            return food[0].gameObject;
+        food = GameObject.FindWithTag("Food");
+        if (food != null){
+            Debug.Log(food.name);
+            return food;
         }else{
             return null;
         }
-    }
-
-    private void setAnimator(){
-        
     }
 
 }
