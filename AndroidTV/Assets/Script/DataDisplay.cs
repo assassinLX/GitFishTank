@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class DataDisplay : MonoBehaviour {
 
@@ -77,7 +78,13 @@ public class DataDisplay : MonoBehaviour {
         Debug.Log("path : " + path);
         var model = (GameObject)Resources.Load(path);
         var CloneModel = Instantiate(model);
-        CloneModel.transform.position = new Vector3(-2.47f, -3.0f, 12.73f);
+        CloneModel.transform.position = new Vector3(-2.47f, 5.0f, 12.73f);
+        StartCoroutine(foodMove(CloneModel));
+    }
+
+    IEnumerator foodMove(GameObject cloneModel){
+        cloneModel.transform.DOMove(new Vector3(-2.47f, -3.0f, 12.73f), 3.0f);
+        yield return new WaitForSeconds(3.0f);
     }
 
     private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors,List<Vector3> scales)

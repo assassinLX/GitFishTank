@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{65C5E3A0-8CC1-DCE4-FF59-E0CF52C396BE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.FishTank PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/netWork/ClientDemo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs">
     <Files>
       <File FileName="Assets/Script/netWork/ClientDemo.cs" Line="22" Column="1" />
-      <File FileName="Assets/Script/netWork/NetUtility.cs" Line="146" Column="20" />
+      <File FileName="Assets/Script/netWork/NetUtility.cs" Line="37" Column="70" />
       <File FileName="Assets/Script/netWork/NetClickStart.cs" Line="29" Column="52" />
       <File FileName="Assets/Script/Manager/SettingManager.cs" Line="16" Column="24" />
       <File FileName="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs" Line="29" Column="47" />
+      <File FileName="Assets/Script/MVC/Views/Main_InstructView/InstructView.cs" Line="44" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

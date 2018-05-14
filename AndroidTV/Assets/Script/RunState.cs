@@ -100,11 +100,11 @@ public class RunState : MonoBehaviour
         yield return new WaitForSeconds(4.0f);
         //播放吃的动画
         transform.GetChild(0).GetComponent<Animation>().CrossFade("eat");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(food);
         //播放Idle动画
         transform.GetChild(0).GetComponent<Animation>().CrossFade("swim");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
 
         yield return new WaitForSeconds(0.3f);
         callBack();
@@ -131,7 +131,7 @@ public class RunState : MonoBehaviour
         }
         for (int i = 0; i < TargePositions.Length;i++){
             TargePositions[i] = _TargePosition[ _TargePosition.Length / TargePositions.Length * i];
-            CreateCube(_TargePosition[i]);
+            //CreateCube(_TargePosition[i]);
         }
     }
 
