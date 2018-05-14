@@ -86,7 +86,7 @@ public class SkinView : MonoBehaviour {
             GameObject parent = GameObject.Find("BrushContainer");
             GameObject brushObj = (GameObject)Resources.Load("TexturePainter-Instances/BrushEntity");
             for (int i = 0; i < parent.transform.childCount;i++){
-                Destroy(parent.transform.GetChild(i));
+                Destroy(parent.transform.GetChild(i).gameObject);
             }
             if (_name == "Button (1)")
             {
@@ -105,12 +105,13 @@ public class SkinView : MonoBehaviour {
                 brushObj.GetComponent<SpriteRenderer>().color = new Color(240.0f / 255.0f, 141.0f / 255.0f, 48.0f / 255.0f);
             }
 
-            for (float x = -0.45f; x < 0.46f; x += 0.01f)
+            for (float x = -0.45f; x < 0.46f; x += 0.05f)
             {
-                for (float y = -0.45f; y < 0.46f; y += 0.01f)
+                for (float y = -0.45f; y < 0.46f; y += 0.05f)
                 {
                     var brushClone = GameObject.Instantiate(brushObj, parent.transform);
                     brushClone.transform.localPosition = new Vector3(x, y, 0);
+                    brushClone.transform.localScale = new Vector3(3, 3, 3);
                 }
             }
         }
