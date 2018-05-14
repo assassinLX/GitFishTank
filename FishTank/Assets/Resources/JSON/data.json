@@ -16,5 +16,11 @@
       "imageName": "clown",
       "name": "小丑鱼",
       "describe": "this is clown fish"
+    },
+    {
+      "id": "opthalmosaurus",
+      "imageName": "opthalmosaurus",
+      "name": "大眼鱼龙",
+      "describe": "this is opthalmosaurus"
     }
 ]

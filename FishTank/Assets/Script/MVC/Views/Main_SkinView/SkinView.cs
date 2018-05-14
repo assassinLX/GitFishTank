@@ -76,7 +76,45 @@ public class SkinView : MonoBehaviour {
 
     }
 
+
+
+
     protected void ChooseColor(string _name){
         Debug.Log(_name);
+       
+        if(GameObject.FindWithTag("Model") != null){
+            GameObject parent = GameObject.Find("BrushContainer");
+            GameObject brushObj = (GameObject)Resources.Load("TexturePainter-Instances/BrushEntity");
+            for (int i = 0; i < parent.transform.childCount;i++){
+                Destroy(parent.transform.GetChild(i));
+            }
+            if (_name == "Button (1)")
+            {
+                brushObj.GetComponent<SpriteRenderer>().color = new Color(150.0f / 255.0f, 89.0f / 255.0f, 33.0f / 255.0f);
+            }
+            else if (_name == "Button (2)")
+            {
+                brushObj.GetComponent<SpriteRenderer>().color = new Color(242.0f / 255.0f, 192.0f / 255.0f, 49.0f / 255.0f);
+            }
+            else if (_name == "Button (3)")
+            {
+                brushObj.GetComponent<SpriteRenderer>().color = new Color(95.0f / 255.0f, 196.0f / 255.0f, 170.0f / 255.0f);
+            }
+            else
+            {
+                brushObj.GetComponent<SpriteRenderer>().color = new Color(240.0f / 255.0f, 141.0f / 255.0f, 48.0f / 255.0f);
+            }
+
+            for (float x = -0.45f; x < 0.46f; x += 0.01f)
+            {
+                for (float y = -0.45f; y < 0.46f; y += 0.01f)
+                {
+                    var brushClone = GameObject.Instantiate(brushObj, parent.transform);
+                    brushClone.transform.localPosition = new Vector3(x, y, 0);
+                }
+            }
+        }
+       
+
     }
 }

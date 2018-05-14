@@ -1,16 +1,11 @@
 ﻿<Properties StartupConfiguration="{65C5E3A0-8CC1-DCE4-FF59-E0CF52C396BE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.FishTank PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/JSON/data.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MVC/Views/Main_SkinView/SkinView.cs">
     <Files>
-      <File FileName="Assets/Script/netWork/ClientDemo.cs" Line="22" Column="1" />
-      <File FileName="Assets/Script/netWork/NetUtility.cs" Line="37" Column="70" />
-      <File FileName="Assets/Script/netWork/NetClickStart.cs" Line="29" Column="52" />
-      <File FileName="Assets/Script/Manager/SettingManager.cs" Line="16" Column="24" />
-      <File FileName="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs" Line="29" Column="47" />
-      <File FileName="Assets/Script/MVC/Views/Main_InstructView/InstructView.cs" Line="64" Column="6" />
-      <File FileName="Assets/Script/MVC/Views/Main_SkinView/SkinView.cs" Line="41" Column="38" />
-      <File FileName="Assets/Resources/JSON/data.json" Line="10" Column="9" />
+      <File FileName="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs" Line="35" Column="56" />
+      <File FileName="Assets/Script/MVC/Views/Main_SkinView/SkinView.cs" Line="88" Column="91" />
+      <File FileName="Assets/Resources/TexturePainter ( Place Me Out of Resources)/Scripts/TexturePainter.cs" Line="45" Column="84" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
