@@ -103,6 +103,9 @@
     <Reference Include="protobuf-net">
       <HintPath>Assets/Plugin/protobuf-net.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/DOTween/DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -131,6 +134,7 @@
     <Compile Include="Assets\Script\MVC\Views\Main_ColourView\ClourView.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructMediator.cs" />
     <Compile Include="Assets\Script\MVC\Views\Main_InstructView\InstructView.cs" />
+    <Compile Include="Assets\Script\MVC\Views\Main_SkinView\SkinView.cs" />
     <Compile Include="Assets\Script\MVC\Views\Star_MainView\BtnsDisplayEffect.cs" />
     <Compile Include="Assets\Script\netWork\ClientDemo.cs" />
     <Compile Include="Assets\Script\netWork\NetClickStart.cs" />
@@ -253,6 +257,9 @@
     <Compile Include="Assets\Underwater_animal_pack\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\DOTween\DOTween.XML" />
+    <None Include="Assets\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\DOTween\readme.txt" />
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ColorSelector\Shaders\ColorSelector.shader" />
     <None Include="Assets\Resources\TexturePainter ( Place Me Out of Resources)\ReadMe.txt" />
     <None Include="Assets\Script\Shader\WaterEffect.shader" />

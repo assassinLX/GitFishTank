@@ -1,21 +1,4 @@
-[{
-        "id": "Cube1001",
-        "imageName": "shark",
-        "name": "fish001",
-        "describe": "this is shark"
-    },
-    {
-        "id": "Cube1002",
-        "imageName": "someFish",
-        "name": "fish002",
-        "describe": "this is someFish"
-    },
-    {
-        "id": "Cube1003",
-        "imageName": "shark",
-        "name": "fish003",
-        "describe": "this is shark"
-    },
+[
     {
         "id": "blue_shark",
         "imageName": "shark",
@@ -24,8 +7,14 @@
     },
     {
         "id": "amberjack",
-        "imageName": "shark",
+        "imageName": "someFish",
         "name": "琥珀鱼",
         "describe": "this is shark"
+    },
+    {
+      "id": "clownfish",
+      "imageName": "clown",
+      "name": "小丑鱼",
+      "describe": "this is clown fish"
     }
 ]
