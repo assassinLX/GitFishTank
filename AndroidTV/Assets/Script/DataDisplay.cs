@@ -56,9 +56,9 @@ public class DataDisplay : MonoBehaviour {
             if(Sever.currentIns == "btn001"){
                 DisplayFood("FoodAmmonite");
             }else if(Sever.currentIns == "btn002"){
-                
+                DisplayFood("laternfish");
             }else{
-                
+                DisplayFood("breed_fish");
             }
             Sever.currentIns = null;
         }
