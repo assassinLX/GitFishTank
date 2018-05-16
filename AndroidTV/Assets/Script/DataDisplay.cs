@@ -85,6 +85,7 @@ public class DataDisplay : MonoBehaviour {
     IEnumerator foodMove(GameObject cloneModel){
         cloneModel.transform.DOMove(new Vector3(-2.47f, -3.0f, 12.73f), 3.0f);
         yield return new WaitForSeconds(3.0f);
+        cloneModel.tag = "Food";
     }
 
     private void DisplayCurrentModel(string id,string peopleID, List<Vector3> positions,List<Color> colors,List<Vector3> scales)

@@ -46,7 +46,7 @@ public class GameSceneManager : MonoBehaviour {
 			}
 		}
 
-		toProgress = 100;
+		toProgress = 96;
 		while(displayProgress < toProgress){
 			++displayProgress;
 			SetLoadingPercentage(displayProgress);

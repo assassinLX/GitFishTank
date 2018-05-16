@@ -17,9 +17,18 @@ public class NetClickStart : MonoBehaviour {
             //设置一下回调
             Debug.Log(msg + "\r\n");
         });
+
 	}
 
-    void currentClickIp(){
+	private void Start()
+	{
+        if (SettingManager.instance.isClick == true)
+        {
+            settingCurrent();
+        }
+	}
+
+	void currentClickIp(){
         
         if(string.IsNullOrEmpty(currentinput.text) == false){
             Debug.Log("test!");

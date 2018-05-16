@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{65C5E3A0-8CC1-DCE4-FF59-E0CF52C396BE}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.FishTank PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/MVC/Views/Main_SkinView/SkinView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Shader/WaterEffect.shader">
     <Files>
-      <File FileName="Assets/Script/MVC/Views/Main_ColourView/ClourView.cs" Line="35" Column="56" />
-      <File FileName="Assets/Script/MVC/Views/Main_SkinView/SkinView.cs" Line="108" Column="56" />
-      <File FileName="Assets/Resources/TexturePainter ( Place Me Out of Resources)/Scripts/TexturePainter.cs" Line="45" Column="84" />
-      <File FileName="Assets/Resources/JSON/data.json" Line="23" Column="21" />
+      <File FileName="Assets/Script/Manager/GameSceneManager.cs" Line="49" Column="18" />
+      <File FileName="Assets/Script/netWork/NetClickStart.cs" Line="27" Column="30" />
+      <File FileName="Assets/Script/Shader/WaterEffect.shader" Line="30" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
