@@ -37,6 +37,7 @@ public class ColorSelector : MonoBehaviour {
 	void UserInputUpdate(){
 		Vector3 cursorPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y,
             (transform.position.z - refCamera.transform.position.z));
+        //Debug.Log("good pos :"+cursorPos);
 		Ray cursorRay = refCamera.ScreenPointToRay (cursorPos);
 		RaycastHit hit = new RaycastHit ();
 		if(Physics.Raycast(cursorRay,out hit)){
